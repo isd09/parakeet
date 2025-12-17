@@ -94,7 +94,7 @@ async function initializeRepoPath() {
 function setupMenu() {
     loadScript(repoPath+'visuals/mainMenu.js', 'mainMenu');
     loadScript(repoPath+'visuals/statusPanel.js', 'statusPanel');
-    loadScript(repoPath+'visuals/donationOverlay.js', 'donationOverlay');
+    // loadScript(repoPath+'visuals/donationOverlay.js', 'donationOverlay');
     loadScript(repoPath+'visuals/viewCounter.js', 'viewCounter');
     if(isDev) loadScript(repoPath+'visuals/devTab.js', 'devTab');
 }
@@ -141,6 +141,7 @@ loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
     
     console.clear();
 });
+
 
 
 
