@@ -104,7 +104,7 @@ function setupMain(){
     loadScript(repoPath+'functions/questionSpoof.js', 'questionSpoof');
     loadScript(repoPath+'functions/videoSpoof.js', 'videoSpoof');
     loadScript(repoPath+'functions/minuteFarm.js', 'minuteFarm');
-    // loadScript(repoPath+'functions/spoofUser.js', 'spoofUser');
+    loadScript(repoPath+'functions/spoofUser.js', 'spoofUser');
     loadScript(repoPath+'functions/answerRevealer.js', 'answerRevealer');
     loadScript(repoPath+'functions/rgbLogo.js', 'rgbLogo');
     loadScript(repoPath+'functions/customBanner.js', 'customBanner');
@@ -139,5 +139,6 @@ loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
     
     console.clear();
 });
+
 
 
