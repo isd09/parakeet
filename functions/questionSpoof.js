@@ -1,8 +1,5 @@
 const phrases = [ 
-    "🔥 Get good, get [**Khanware**](https://github.com/Niximkk/khanware/)!",
-    "🤍 Made by [**@im.nix**](https://e-z.bio/sounix).",
-    "☄️ By [**Niximkk/khanware**](https://github.com/Niximkk/khanware/).",
-    "🌟 Star the project on [GitHub](https://github.com/Niximkk/khanware/)!"
+    ""
 ];
 
 const originalFetch = window.fetch;
@@ -252,20 +249,20 @@ window.fetch = async function(input, init) {
             
             if (answers.length > 0) {
                 correctAnswers.set(item.id, answers);
-                sendToast(`📦 ${answers.length} resposta(s) capturada(s).`, 750);
+                sendToast(`📦 ${answers.length} responses captured.`, 750);
             }
             
             if (itemData.question.content?.[0] === itemData.question.content[0].toUpperCase()) {
                 
                 itemData.answerArea = { calculator: false, chi2Table: false, periodicTable: false, tTable: false, zTable: false };
-                itemData.question.content = phrases[Math.floor(Math.random() * phrases.length)] + "\n\n**Onde você deve obter seus scripts?**" + `[[☃ radio 1]]`+ `\n\n**💎 Quer ter a sua mensagem lida para TODOS utilizando o Khanware?** \nFaça uma [Donate Aqui](https://livepix.gg/nixyy)!` ;
+                itemData.question.content = phrases[Math.floor(Math.random() * phrases.length)] + "\n\n**Yo**" + `[[☃ radio 1]]`+ `\n\n**💎 pretty cool, am i right?**` ;
                 itemData.question.widgets = {
                     "radio 1": {
                         type: "radio", alignment: "default", static: false, graded: true,
                         options: {
                             choices: [
-                                { content: "**I Can Say** e **Platform Destroyer**.", correct: true, id: "correct-choice" },
-                                { content: "Qualquer outro kibador **viado**.", correct: false, id: "incorrect-choice" }
+                                { content: "**Correct ✅**.", correct: true, id: "correct-choice" },
+                                { content: "Incorrect ❌.", correct: false, id: "incorrect-choice" }
                             ],
                             randomize: false, multipleSelect: false, displayCount: null, deselectEnabled: false
                         },
@@ -283,7 +280,7 @@ window.fetch = async function(input, init) {
                     }
                 }
                 
-                sendToast("🔓 Questão exploitada.", 750);
+                sendToast("🔓 Question exploited.", 750);
                 return new Response(JSON.stringify(modified), { 
                     status: res.status, statusText: res.statusText, headers: res.headers 
                 });
@@ -561,7 +558,7 @@ window.fetch = async function(input, init) {
                 body = JSON.stringify(bodyObj);
                 if (input instanceof Request) input = new Request(input, { body });
                 else init.body = body;
-                sendToast(`✨ ${answers.length} resposta(s) aplicada(s).`, 750);
+                sendToast(`✨ ${answers.length} applied response(s).`, 750);
             }
         } catch (e) { debug(`🚨 Error @ questionSpoof.js\n${e}`); }
     }
