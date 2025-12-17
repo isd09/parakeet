@@ -83,7 +83,7 @@ async function loadCss(url) { return new Promise((resolve) => { const link = doc
 async function initializeRepoPath() {
     for (const cdn of availableCDNs) {
         try {
-            const response = await fetch(cdn + 'Khanware.js', { method: 'HEAD' });
+            const response = await fetch(cdn + 'parakeet.js', { method: 'HEAD' });
             if (response.ok) { repoPath = cdn; return; }
         } catch {}
     }
@@ -139,4 +139,5 @@ loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
     
     console.clear();
 });
+
 
