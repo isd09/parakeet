@@ -94,7 +94,7 @@ async function initializeRepoPath() {
 function setupMenu() {
     loadScript(repoPath+'visuals/mainMenu.js', 'mainMenu');
     loadScript(repoPath+'visuals/statusPanel.js', 'statusPanel');
-    loadScript(repoPath+'visuals/donationOverlay.js', 'donationOverlay');
+    // loadScript(repoPath+'visuals/donationOverlay.js', 'donationOverlay');
     loadScript(repoPath+'visuals/viewCounter.js', 'viewCounter');
     if(isDev) loadScript(repoPath+'visuals/devTab.js', 'devTab');
 }
@@ -104,7 +104,7 @@ function setupMain(){
     loadScript(repoPath+'functions/questionSpoof.js', 'questionSpoof');
     loadScript(repoPath+'functions/videoSpoof.js', 'videoSpoof');
     loadScript(repoPath+'functions/minuteFarm.js', 'minuteFarm');
-    loadScript(repoPath+'functions/spoofUser.js', 'spoofUser');
+    // loadScript(repoPath+'functions/spoofUser.js', 'spoofUser');
     loadScript(repoPath+'functions/answerRevealer.js', 'answerRevealer');
     loadScript(repoPath+'functions/rgbLogo.js', 'rgbLogo');
     loadScript(repoPath+'functions/customBanner.js', 'customBanner');
@@ -116,24 +116,22 @@ function setupMain(){
 showSplashScreen();
 initializeRepoPath();
 
-loadScript('https://cdn.jsdelivr.net/gh/adryd325/oneko.js@master/oneko.js', 'onekoJs').then(() => { onekoEl = document.getElementById('oneko'); onekoEl.style.backgroundImage = "url('https://cdn.jsdelivr.net/gh/adryd325/oneko.js@master/oneko.gif')"; onekoEl.style.display = "none"; });
-loadScript('https://cdn.jsdelivr.net/npm/darkreader@latest/darkreader.min.js', 'darkReaderPlugin').then(()=>{ DarkReader.setFetchMethod(window.fetch); DarkReader.enable(); })
+// loadScript('https://cdn.jsdelivr.net/gh/adryd325/oneko.js@master/oneko.js', 'onekoJs').then(() => { onekoEl = document.getElementById('oneko'); onekoEl.style.backgroundImage = "url('https://cdn.jsdelivr.net/gh/adryd325/oneko.js@master/oneko.gif')"; onekoEl.style.display = "none"; });
+// loadScript('https://cdn.jsdelivr.net/npm/darkreader@latest/darkreader.min.js', 'darkReaderPlugin').then(()=>{ DarkReader.setFetchMethod(window.fetch); DarkReader.enable(); })
 loadCss('https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css', 'toastifyCss');
 loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
 .then(async () => {
     // fetch("https://pt.khanacademy.org/api/internal/graphql/getFullUserProfile",{referrer:"https://pt.khanacademy.org/profile/me",body:'{"operationName":"getFullUserProfile","query":"query getFullUserProfile($kaid: String, $username: String) {\\n  user(kaid: $kaid, username: $username) {\\n    id\\n    kaid\\n    key\\n    userId\\n    email\\n    username\\n    profileRoot\\n    gaUserId\\n    isPhantom\\n    isDeveloper: hasPermission(name: \\"can_do_what_only_admins_can_do\\")\\n    isPublisher: hasPermission(name: \\"can_publish\\", scope: ANY_ON_CURRENT_LOCALE)\\n    isModerator: hasPermission(name: \\"can_moderate_users\\", scope: GLOBAL)\\n    isParent\\n    isTeacher\\n    isFormalTeacher\\n    isK4dStudent\\n    isKmapStudent\\n    isDataCollectible\\n    isChild\\n    isOrphan\\n    isCoachingLoggedInUser\\n    canModifyCoaches\\n    nickname\\n    hideVisual\\n    joined\\n    points\\n    countVideosCompleted\\n    bio\\n    profile {\\n      accessLevel\\n      __typename\\n    }\\n    soundOn\\n    muteVideos\\n    showCaptions\\n    prefersReducedMotion\\n    noColorInVideos\\n    newNotificationCount\\n    canHellban: hasPermission(name: \\"can_ban_users\\", scope: GLOBAL)\\n    canMessageUsers: hasPermission(\\n      name: \\"can_send_moderator_messages\\"\\n      scope: GLOBAL\\n    )\\n    isSelf: isActor\\n    hasStudents: hasCoachees\\n    hasClasses\\n    hasChildren\\n    hasCoach\\n    badgeCounts\\n    homepageUrl\\n    isMidsignupPhantom\\n    includesDistrictOwnedData\\n    includesKmapDistrictOwnedData\\n    includesK4dDistrictOwnedData\\n    canAccessDistrictsHomepage\\n    isInKhanClassroomDistrict\\n    underAgeGate {\\n      parentEmail\\n      daysUntilCutoff\\n      approvalGivenAt\\n      __typename\\n    }\\n    authEmails\\n    signupDataIfUnverified {\\n      email\\n      emailBounced\\n      __typename\\n    }\\n    pendingEmailVerifications {\\n      email\\n      __typename\\n    }\\n    hasAccessToAIGuideCompanionMode\\n    hasAccessToAIGuideLearner\\n    hasAccessToAIGuideDistrictAdmin\\n    hasAccessToAIGuideParent\\n    hasAccessToAIGuideTeacher\\n    tosAccepted\\n    shouldShowAgeCheck\\n    birthMonthYear\\n    lastLoginCountry\\n    region\\n    userDistrictInfos {\\n      id\\n      isKAD\\n      district {\\n        id\\n        region\\n        __typename\\n      }\\n      __typename\\n    }\\n    schoolAffiliation {\\n      id\\n      location\\n      __typename\\n    }\\n    __typename\\n  }\\n  actorIsImpersonatingUser\\n  isAIGuideEnabled\\n  hasAccessToAIGuideDev\\n}"}',method:"POST",mode:"cors",credentials:"include"})
     // .then(async response => { let data = await response.json(); user = { nickname: data.data.user.nickname, username: data.data.user.username, UID: data.data.user.id.slice(-5) }; })
     
-    sendToast("🌿 Khanware injetado com sucesso!");
-    
-    playAudio('https://r2.e-z.host/4d0a0bea-60f8-44d6-9e74-3032a64a9f32/gcelzszy.wav');
-    
+    sendToast("🌿 Khanware injected successfully!");
+        
     await delay(500);
     
-    sendToast(`⭐ Bem vindo(a) de volta: ${user.nickname}`);
-    if(device.apple) { await delay(500); sendToast(`🪽 Que tal comprar um Samsung?`); }
+    // sendToast(`⭐ Bem vindo(a) de volta: ${user.nickname}`);
+    // if(device.apple) { await delay(500); sendToast(`🪽 Que tal comprar um Samsung?`); }
     
-    loadedPlugins.forEach(plugin => sendToast(`🪝 ${plugin} Loaded!`, 2000, 'top') );
+    // loadedPlugins.forEach(plugin => sendToast(`🪝 ${plugin} Loaded!`, 2000, 'top') );
     
     hideSplashScreen();
     setupMenu();
@@ -141,74 +139,3 @@ loadScript('https://cdn.jsdelivr.net/npm/toastify-js', 'toastifyPlugin')
     
     console.clear();
 });
-
-/* Thank you to everyone who has purchased access to my cheat as of 10/28/24.
-@Thomaz015
-@grazynabazio
-@melyssaxavier
-@WESLEY.SPREDEMANN
-@carine.rech.alves
-@nazare.de.maria
-@jowsanth
-@bielzy
-@rafaeldeagostino
-@AMFDS
-@Jv010107
-@Mattheusfreitas01
-@Guilhermeoliveira2623
-@Matt010101
-@voncallis
-@Thamiris0001
-@Holmes1212
-@Martinss0000
-@zRoque
-@LaryCouto.com.br
-@IanyckFerreira
-@sales7
-@AleSobral
-@wbzz2121
-@Umunizzz
-@ViniciusMancini
-@ricardaosantista
-@marcos10pc
-@bzinxxx
-@ryanmzmartins
-@Kaleb1577
-@brunopereirabarros
-@RodrigoMartins1236751
-@guixzf
-@Leandrohenrq
-@damnntiago
-@WhoisMe777
-@Gustavopc21
-@matheus.hx2
-@WSZL
-@LeozinB2
-@Davas123
-@joaoviturino
-@orickmaxx
-@l55nar5
-@nextbyhawk
-@Bruninda019
-@GabrielRibeiroP
-@Shinjoia
-@hy7pee
-@arthurmondequedutra
-@PedrooVsp
-@zBlucker
-@vitiintavares
-@Holmes1212
-@Anthony06927
-@refinado
-@ErickMarinelli
-@pedroomelhor
-@gabrielmonteiro0053
-@Felipealexandre10
-@saantzx7
-@alvarosouzaribeiro
-@gabrielejte
-@Kevinzada
-@antonio77xs
-@marcus.floriano.oliveira
-
-*/
